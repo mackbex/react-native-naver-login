@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "flow": "dist/index.flow.js",
   "source": "src/index",
-  "privat": true,
+  "private": true,
   "scripts": {
     "example": "yarn workspace example",
     "typecheck": "tsc --noEmit",
@@ -91,6 +91,9 @@
     "!**/.*"
   ],
   "packageManager": "yarn@4.1.1",
+  "workspaces": [
+    "example"
+  ],
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
