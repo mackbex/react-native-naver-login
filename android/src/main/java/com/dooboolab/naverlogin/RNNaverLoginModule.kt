@@ -21,6 +21,13 @@ class RNNaverLoginModule(reactContext: ReactApplicationContext) : ReactContextBa
     fun logout(promise: Promise) =
         UiThreadUtil.runOnUiThread {
             callLogout()
+            val sp = reactApplicationContext?.getSharedPreferences("NaverOAuthLoginEncryptedPreferenceData",Context.MODE_PRIVATE)
+            val token = sp?.getString("ACCESS_TOKEN",null)
+
+            Log.d("NID_LOGIN","ACCESS_TOKEN ${token}")
+            sp?.edit {
+                remove("ACCESS_TOKEN")
+            }
             promise.safeResolve(null)
         }
 
