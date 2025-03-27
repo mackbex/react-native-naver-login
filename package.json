@@ -7,6 +7,7 @@
   "types": "dist/index.d.ts",
   "flow": "dist/index.flow.js",
   "source": "src/index",
+  "privat": true,
   "scripts": {
     "example": "yarn workspace example",
     "typecheck": "tsc --noEmit",
