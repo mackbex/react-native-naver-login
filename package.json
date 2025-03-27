@@ -91,9 +91,6 @@
     "!**/.*"
   ],
   "packageManager": "yarn@4.1.1",
-  "workspaces": [
-    "example"
-  ],
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
