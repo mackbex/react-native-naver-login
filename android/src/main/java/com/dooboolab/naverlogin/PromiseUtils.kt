@@ -1,7 +1,6 @@
 package com.dooboolab.naverlogin
 
 import android.util.Log
-import com.facebook.react.bridge.ObjectAlreadyConsumedException
 import com.facebook.react.bridge.Promise
 
 /**
@@ -14,7 +13,7 @@ const val TAG = "RNNaverLogin"
 fun Promise.safeResolve(value: Any?) {
     try {
         this.resolve(value)
-    } catch (oce: ObjectAlreadyConsumedException) {
+    } catch (oce: Throwable) {
         Log.d(TAG, "Already consumed ${oce.message}")
     }
 }
@@ -40,7 +39,7 @@ fun Promise.safeReject(
 ) {
     try {
         this.reject(code ?: "UNKNOWN_ERROR", message, throwable)
-    } catch (oce: ObjectAlreadyConsumedException) {
+    } catch (oce: Throwable) {
         Log.d(TAG, "Already consumed ${oce.message}")
     }
 }
