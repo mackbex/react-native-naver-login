@@ -11,7 +11,7 @@
   "scripts": {
     "example": "yarn workspace example",
     "typecheck": "tsc --noEmit",
-    "build": "rm -rf dist && tsc --project tsconfig.build.json && tsc --project ./plugin && flowgen dist/index.d.ts -o dist/index.flow.js",
+    "build": "rimraf dist && tsc --project tsconfig.build.json && tsc --project ./plugin && flowgen dist/index.d.ts -o dist/index.flow.js",
     "lint": "eslint",
     "validate": "yarn lint && yarn typecheck",
     "prepare": "husky",
@@ -63,6 +63,7 @@
     "prettier": "^3.0.3",
     "react": "18.2.0",
     "react-native": "0.73.6",
+    "rimraf": "^6.0.1",
     "typescript": "5.1.6"
   },
   "config": {
